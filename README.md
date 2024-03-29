@@ -12,8 +12,8 @@ URL AI Assistant offers an intuitive interface for users to interact with and re
 
 # Installation #
 Before running URL AI Assistant, ensure you have Python 3.6 or later installed. You can then install the necessary dependencies via pip:
-git clone https://github.com/BobGanti/PDFAI.git
-cd PDFAI
+git clone https://github.com/BobGanti/URLAI.git
+cd URLAI
 pip install -r requirements.txt
 
 # Dependencies #
@@ -28,13 +28,14 @@ pip install -r requirements.txt
   a. OPENAI_API_KEY: Your OpenAI API key for embeddings and chat.
   b. INSTRUCTIONS: Default instructions for querying.
   c. ASSISTANT_PROFILE: Customize the assistant's profile.
-2. Run the Application: Start the SMAI Assistant by running the Streamlit application.
-  streamlit run pdfs.py
+2. Run the Application: Start the URL AI Assistant by running the Streamlit application.
+  streamlit run urls.py
 
 # Usage #
-  > Adding Content Sources: Use the sidebar to upload PDF documents to augment the chatbot's knowledge base.
-  > Interacting with the Chatbot: Enter queries in the chat input field to receive responses based on the aggregated knowledge from the specified uploaded PDFs.
-  > Customization: Modify the .env.local file to tailor the assistant's behavior and responses to your preferences.
+  > Adding Content Sources: Use the sidebar to enter urls separating each url with a ",", so that the chatbot can scrape the wibsites provided to augment the   
+    its knowledge base.
+  > Interacting with the Chatbot: Enter queries in the chat input field to receive responses based on the aggregated knowledge from the specified urls.
+  > Customisation: Modify the .env.local file to tailor the assistant's behavior and responses to your preferences.
 
 # Contributing #
 Contributions are welcome! If you have suggestions for improvements or bug fixes, please open an issue or submit a pull request.
