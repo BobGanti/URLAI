@@ -4,8 +4,10 @@ By leveraging the power of LangChain, OpenAI's embeddings, and Streamlit's inter
 URL AI Assistant offers an intuitive interface for users to interact with and retrieve information from a knowledge base constructed from document content.
 
 # Features #
-  a. URL Processing: URL AI Assistant allows for the scraping of websites, vectorising the content and storing in a vector database (ChromaDB) enhancing its knowledge base with the content extracted from these documents.
+  a. URL Processing: URL AI Assistant allows for the scraping of websites, vectorising the content and storing in a vector database (ChromaDB) enhancing its knowledge base with the content extracted from these websites.
+  
   b. Conversational Interface: Built with Streamlit, the application provides a chat-like interface for querying the knowledge base in a natural, conversational manner.
+  
   c. Customizable Prompts: Integrates with OpenAI's embeddings for customizable prompt engineering, enabling refined responses based on the content of the knowledge base.
 
 # Installation #
