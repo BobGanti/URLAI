@@ -1,15 +1,15 @@
-# URL AI with CHROMA VECTORSTORE
+# URL AI with CHROMADB VECTORSTORE
 The URL AI Assistant is a conversational AI chatbot built using Streamlit, designed to query and understand content from specified url. 
 By leveraging the power of LangChain, OpenAI's embeddings, and Streamlit's interactive capabilities, 
 URL AI Assistant offers an intuitive interface for users to interact with and retrieve information from a knowledge base constructed from document content.
 
 # Features #
-  a. PDF Document Processing: PDFAI Assistant allows for the upload of PDF documents, enhancing its knowledge base with the content extracted from these documents.
+  a. URL Processing: URL AI Assistant allows for the scraping of websites, vectorising the content and storing in a vector database (ChromaDB) enhancing its knowledge base with the content extracted from these documents.
   b. Conversational Interface: Built with Streamlit, the application provides a chat-like interface for querying the knowledge base in a natural, conversational manner.
   c. Customizable Prompts: Integrates with OpenAI's embeddings for customizable prompt engineering, enabling refined responses based on the content of the knowledge base.
 
 # Installation #
-Before running SMAI Assistant, ensure you have Python 3.6 or later installed. You can then install the necessary dependencies via pip:
+Before running URL AI Assistant, ensure you have Python 3.6 or later installed. You can then install the necessary dependencies via pip:
 git clone https://github.com/BobGanti/PDFAI.git
 cd PDFAI
 pip install -r requirements.txt
