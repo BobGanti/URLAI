@@ -12,10 +12,13 @@ from langchain.chains import create_history_aware_retriever, create_retrieval_ch
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
 # Load environment variables
-load_dotenv(".env.local")
+load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 INSTRUCTIONS = os.getenv('INSTRUCTIONS', 'Please follow the instructions.') 
 ASSISTANT_PROFILE = os.getenv('ASSISTANT_PROFILE', 'Default Assistant Profile')
+
+#llm = llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo')
+llm = llm = ChatOpenAI()
 
 def main():
     """Main application function."""
@@ -29,7 +32,7 @@ def main():
 
 def setup_streamlit_ui():
     """Setup Streamlit UI components."""
-    st.set_page_config(page_title="SintaxMatrix", page_icon="👋")
+    st.set_page_config(page_title="SintaxMatrix", page_icon="🤖")
     st.title("SM URL Query Assistant")
     with st.sidebar:
         st.header("Settings")
@@ -47,7 +50,7 @@ def process_urls(urls):
                 st.sidebar.write("ERROR! Start URLs with https://")
                 return
     except Exception as e:
-        st.sidebar.write("ERROR! Include valid domains, like '.com'.")
+        st.sidebar.write(e)
 
 def get_vectorstore_from_url(url):
     """Load a document from a URL and create a vector store."""
@@ -75,7 +78,7 @@ def get_response(user_query):
 def display_conversation():
     """Display conversation history and input box for new queries."""
     if "chat_history" not in st.session_state:
-        st.session_state.chat_history = [AIMessage(content="Hi!")]
+        st.session_state.chat_history = [AIMessage(content="Hi 👋")]
     
     user_query = st.chat_input("Say something...", key="user_query")
     if user_query:
@@ -88,10 +91,10 @@ def display_conversation():
     for message in st.session_state.chat_history:
         with st.container():
             if isinstance(message, AIMessage):
-                 with st.chat_message("AI"):
+                 with st.chat_message("AI🤖"):
                     st.write(message.content)
             elif isinstance(message, HumanMessage):
-                 with st.chat_message("Human"):
+                 with st.chat_message("You"):
                     st.write(message.content)
 
 def get_context_retriever_chain(vector_store):
